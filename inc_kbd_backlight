@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cur=`cat /sys/devices/platform/samsung/leds/samsung::kbd_backlight/brightness`
+new=$(($cur+1))
+echo -n $new >/sys/devices/platform/samsung/leds/samsung::kbd_backlight/brightness

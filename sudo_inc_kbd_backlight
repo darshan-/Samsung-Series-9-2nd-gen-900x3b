@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo /home/darshan/bin/inc_kbd_backlight

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+intel_cur=`cat /sys/class/backlight/intel_backlight/brightness`
+intel_act=`cat /sys/class/backlight/intel_backlight/actual_brightness`
+intel_max=`cat /sys/class/backlight/intel_backlight/max_brightness`
+acpi_cur=`cat /sys/class/backlight/acpi_video0/brightness`
+acpi_act=`cat /sys/class/backlight/acpi_video0/actual_brightness`
+acpi_max=`cat /sys/class/backlight/acpi_video0/max_brightness`
+
+echo -e "dev \t cur \t act \t max"
+echo -e "Intel \t $intel_cur \t $intel_act \t $intel_max"
+echo -e "ACPI \t $acpi_cur \t $acpi_act \t $acpi_max"

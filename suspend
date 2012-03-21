@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -n mem >/sys/power/state
+
+intel_act=`cat /sys/class/backlight/intel_backlight/actual_brightness`
+acpi_act=`cat /sys/class/backlight/acpi_video0/actual_brightness`
+
+echo -n $intel_act >/sys/class/backlight/intel_backlight/brightness
+#echo -n $acpi_act >/sys/class/backlight/acpi_video0/brightness
+
