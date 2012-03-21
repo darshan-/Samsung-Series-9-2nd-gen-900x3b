@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cur=`cat /sys/devices/platform/samsung/rfkill/rfkill0/state`
+
+if [[ $cur -eq 0 ]]; then
+    #sudo rfkill unblock all
+    for dev in `sudo rfkill list | grep "Wireless LAN" | awk -F ':' '{print $1;}'`; do sudo rfkill unblock $dev; done
+else
+    sudo rfkill block all
+fi

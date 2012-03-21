@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cur=`cat /sys/devices/platform/samsung/rfkill/rfkill0/state`
-
-if [[ $cur -eq 0 ]]; then
-    sudo rfkill unblock all
-else
-    sudo rfkill block all
-fi
