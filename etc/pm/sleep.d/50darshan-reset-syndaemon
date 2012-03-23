@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+	resume) 
+		sleep 1
+		killall syndaemon
+		DISPLAY=:0 sudo -n -i -u `who | grep " :0" | awk '{print $1;}'` /usr/bin/syndaemon-launcher
+		;;
+	*) exit $NA
+		;;
+esac
